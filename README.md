@@ -11,8 +11,8 @@ The title is read from the item’s top banner, while the body text is extracted
 MNM Item Image Extractor
 | .venv/                  (Python virtual environment – ignored by git)
 | testimages/
-| | images/               (Test images: PNG/JPG/etc.)
-| | *.txt                 (OCR output files – ignored by git)
+|| *.ext                 (Images with their extension)
+|| *.txt                 (OCR output files – ignored by git)
 | ocr_rename_items.py     (Main application)
 ```
 --------------------------------------------------
@@ -28,14 +28,14 @@ MNM Item Image Extractor
 ## INSTALL TESSERACT OCR
 
 ### LINUX (Debian / Ubuntu)
-
+```
 sudo apt update
 sudo apt install tesseract-ocr
-
+```
 Verify installation:
-
+```
 tesseract --version
-
+```
 --------------------------------------------------
 
 ### WINDOWS
@@ -46,36 +46,38 @@ tesseract --version
 2. Install using the default options.
 
 3. If Tesseract is not found automatically, open ocr_rename_items.py and uncomment / edit this line if needed:
-
+```
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
+```
 --------------------------------------------------
 
 ## CREATE A VIRTUAL ENVIRONMENT
 
 ### LINUX / macOS
-
+```
+cd /path/to/MNM\ Item\ Image\ Extractor
 python3 -m venv .venv
 source .venv/bin/activate
-
+```
 ### WINDOWS (PowerShell)
-
+```
+cd /path/to/MNM\ Item\ Image\ Extractor
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-
+```
 If activation is blocked, run this once:
-
+```
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-
+```
 --------------------------------------------------
 
 ## INSTALL PYTHON DEPENDENCIES
 
 With the virtual environment activated:
-
+```
 pip install --upgrade pip
 pip install pytesseract opencv-python numpy
-
+```
 --------------------------------------------------
 
 PREPARE TEST IMAGES
@@ -98,13 +100,13 @@ tif / tiff
 From the project root:
 
 ### LINUX / macOS
-
+```
 python ocr_rename_items.py testimages
-
+```
 ### WINDOWS
-
+```
 python ocr_rename_items.py testimages
-
+```
 --------------------------------------------------
 
 ## OUTPUT BEHAVIOR
@@ -119,7 +121,7 @@ For each image:
   SANGREL_RING_OF_THE_STRIKER.txt
 
 Example text file contents:
-
+```
 SANGREL RING OF THE STRIKER
 MAGIC
 Slot: FINGER
@@ -129,7 +131,7 @@ A simple ring worn by initiates of the Sangrel Fist.
 Weight: 0.1 Size: SMALL
 Class: ALL
 Race: ALL
-
+```
 --------------------------------------------------
 
 ## NOTES
