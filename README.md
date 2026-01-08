@@ -7,14 +7,14 @@ The title is read from the item’s top banner, while the body text is extracted
 --------------------------------------------------
 
 ## PROJECT STRUCTURE
-
+```
 MNM Item Image Extractor
 | .venv/                  (Python virtual environment – ignored by git)
 | testimages/
 | | images/               (Test images: PNG/JPG/etc.)
 | | *.txt                 (OCR output files – ignored by git)
 | ocr_rename_items.py     (Main application)
-
+```
 --------------------------------------------------
 
 ## REQUIREMENTS
@@ -132,7 +132,7 @@ Race: ALL
 
 --------------------------------------------------
 
-NOTES
+## NOTES
 
 - All .txt files inside testimages/ are ignored by git
 - The .venv directory is ignored by git
@@ -141,6 +141,6 @@ NOTES
 
 --------------------------------------------------
 
-LICENSE
+## LICENSE
 
 MIT
