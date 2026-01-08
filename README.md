@@ -9,15 +9,15 @@ The title is read from the item’s top banner, while the body text is extracted
 ## PROJECT STRUCTURE
 
 MNM Item Image Extractor
- | .venv/                  (Python virtual environment – ignored by git)
- | testimages/
- | | images/               (Test images: PNG/JPG/etc.)
- | | *.txt                 (OCR output files – ignored by git)
- | ocr_rename_items.py     (Main application)
+| .venv/                  (Python virtual environment – ignored by git)
+| testimages/
+| | images/               (Test images: PNG/JPG/etc.)
+| | *.txt                 (OCR output files – ignored by git)
+| ocr_rename_items.py     (Main application)
 
 --------------------------------------------------
 
-REQUIREMENTS
+## REQUIREMENTS
 
 - Python 3.10 or newer (3.11 recommended)
 - Tesseract OCR installed
@@ -25,9 +25,9 @@ REQUIREMENTS
 
 --------------------------------------------------
 
-INSTALL TESSERACT OCR
+## INSTALL TESSERACT OCR
 
-LINUX (Debian / Ubuntu)
+### LINUX (Debian / Ubuntu)
 
 sudo apt update
 sudo apt install tesseract-ocr
@@ -38,7 +38,7 @@ tesseract --version
 
 --------------------------------------------------
 
-WINDOWS
+### WINDOWS
 
 1. Download Tesseract from:
    https://github.com/UB-Mannheim/tesseract/wiki
@@ -51,14 +51,14 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 --------------------------------------------------
 
-CREATE A VIRTUAL ENVIRONMENT
+## CREATE A VIRTUAL ENVIRONMENT
 
-LINUX / macOS
+### LINUX / macOS
 
 python3 -m venv .venv
 source .venv/bin/activate
 
-WINDOWS (PowerShell)
+### WINDOWS (PowerShell)
 
 python -m venv .venv
 .venv\Scripts\Activate.ps1
@@ -69,7 +69,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 --------------------------------------------------
 
-INSTALL PYTHON DEPENDENCIES
+## INSTALL PYTHON DEPENDENCIES
 
 With the virtual environment activated:
 
@@ -82,7 +82,7 @@ PREPARE TEST IMAGES
 
 Place item screenshots in:
 
-testimages/images/
+testimages/
 
 Supported formats:
 png
@@ -93,21 +93,21 @@ tif / tiff
 
 --------------------------------------------------
 
-RUN THE APPLICATION
+## RUN THE APPLICATION
 
 From the project root:
 
-LINUX / macOS
+### LINUX / macOS
 
-python ocr_rename_items.py testimages/images
+python ocr_rename_items.py testimages
 
-WINDOWS
+### WINDOWS
 
-python ocr_rename_items.py testimages\images
+python ocr_rename_items.py testimages
 
 --------------------------------------------------
 
-OUTPUT BEHAVIOR
+## OUTPUT BEHAVIOR
 
 For each image:
 
