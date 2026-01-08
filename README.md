@@ -1,4 +1,4 @@
-MNM Item Image Extractor
+# MNM Item Image Extractor
 
 This project extracts text from Monsters & Memories-style item images using OCR, renames the image based on the item name, and writes a .txt file containing the extracted item data.
 
@@ -6,19 +6,14 @@ The title is read from the item’s top banner, while the body text is extracted
 
 --------------------------------------------------
 
-PROJECT STRUCTURE
+## PROJECT STRUCTURE
 
 MNM Item Image Extractor
-
-| .venv/                  (Python virtual environment – ignored by git)
-
-| testimages/
-
-| | images/               (Test images: PNG/JPG/etc.)
-
-| | *.txt                 (OCR output files – ignored by git)
-
-| ocr_rename_items.py     (Main application)
+ | .venv/                  (Python virtual environment – ignored by git)
+ | testimages/
+ | | images/               (Test images: PNG/JPG/etc.)
+ | | *.txt                 (OCR output files – ignored by git)
+ | ocr_rename_items.py     (Main application)
 
 --------------------------------------------------
 
