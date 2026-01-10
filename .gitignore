@@ -1,6 +1,9 @@
 .venv/
 testimages/*.txt
 testimages/**/*.txt
+testimages/*.png
+!testimages/SANGREL_RING_OF_THE_GRAPPLER.png
+!testimages/SANGREL_RING_OF_THE_ENTANGLER.png
 __pycache__/
 *.py[cod]
 

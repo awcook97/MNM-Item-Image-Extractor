@@ -143,6 +143,191 @@ Race: ALL
 
 --------------------------------------------------
 
-## LICENSE
+Here is the **same content**, rewritten with **proper Markdown formatting** so it renders cleanly on GitHub and is easy to read and copy.
 
-MIT
+You can paste this directly into your README.
+
+---
+
+## Windows Setup (Step-by-Step)
+
+This section walks through installing Python and running the project on **Windows**, starting from a clean system.
+
+---
+
+### 1. Install Python
+
+1. Go to the official Python download page:
+   [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
+
+2. Click **Download Python 3.x.x** (latest stable version).
+
+3. Run the installer.
+
+4. **Important:**
+   ✔ Check **“Add Python to PATH”** at the bottom of the installer window.
+
+5. Click **Install Now** and wait for installation to finish.
+
+---
+
+### 2. Verify Python Installation
+
+Open **Command Prompt** or **PowerShell** and run:
+
+```powershell
+python --version
+```
+
+You should see output similar to:
+
+```text
+Python 3.11.x
+```
+
+If you do, Python is installed correctly.
+
+---
+
+### 3. Clone or Download the Project
+
+Using Git:
+
+```powershell
+git clone <your-repo-url>
+cd "MNM Item Image Extractor"
+```
+
+Or download the ZIP from GitHub, extract it, and open the project folder.
+
+---
+
+### Change Directory to the Project Folder
+
+After extracting the ZIP file, you need to change into the project directory before running any commands.
+
+#### Example (replace with your actual path)
+
+```powershell
+cd path\to\MNM Item Image Extractor
+```
+
+#### Common examples
+
+If you extracted it to your **Downloads** folder:
+
+```powershell
+cd $HOME\Downloads\MNM Item Image Extractor
+```
+
+If you extracted it to your **Desktop**:
+
+```powershell
+cd $HOME\Desktop\MNM Item Image Extractor
+```
+
+You can confirm you’re in the correct directory by running:
+
+```powershell
+dir
+```
+
+You should see:
+
+```text
+testimages
+ocr_rename_items.py
+README.md
+requirements.txt
+```
+
+---
+
+### 4. Create a Virtual Environment
+
+From inside the project folder:
+
+```powershell
+python -m venv .venv
+```
+
+---
+
+### 5. Activate the Virtual Environment
+
+In **PowerShell**:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+If PowerShell blocks activation, run this **once**:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+Then activate again:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+When activated, your prompt will show:
+
+```text
+(.venv)
+```
+
+---
+
+### 6. Install Python Dependencies
+
+With the virtual environment active:
+
+```powershell
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+---
+
+### 7. Install Tesseract OCR
+
+1. Download the Windows installer from:
+   [https://github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
+
+2. Install using the default options.
+
+3. If Tesseract is not found automatically, open `ocr_rename_items.py` and set:
+
+```python
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+```
+
+(Uncomment the line if needed.)
+
+---
+
+### 8. Run the Application
+
+1. Place test images in:
+
+```text
+testimages\images\
+```
+
+2. Run the script:
+
+```powershell
+python ocr_rename_items.py testimages\images
+```
+
+---
+
+### 9. Verify Output
+
+* Images will be renamed based on the detected item title.
+* Matching `.txt` files will be created alongside the images.
+
+---
