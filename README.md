@@ -320,7 +320,7 @@ testimages\images\
 2. Run the script:
 
 ```powershell
-python ocr_rename_items.py testimages\images
+python ocr_rename_items.py testimages
 ```
 
 ---
